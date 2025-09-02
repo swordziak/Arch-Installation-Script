@@ -1,3 +1,5 @@
+#1/bin/bash
+
 echo "Do you want install NVIDIA Drivers?"
 echo "1) Yes"
 echo "2) No"
