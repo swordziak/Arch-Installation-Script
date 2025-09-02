@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo "$PASS" | arch-chroot /mnt passwd --stdin root
+echo "root:$PASS" | arch-chroot /mnt chpasswd
+
 arch-chroot /mnt useradd -m -G wheel,video -s /bin/${SHELL} $USER_NAME
-echo "$PASS" | arch-chroot /mnt passwd --stdin $USER_NAME
-arch-chroot /mnt echo '%wheel ALL=(ALL:ALL) ALL' >> /etc/sudoers
-arch-chroot /mnt chmod 0440 /etc/sudoers
+echo "$USER_NAME:$PASS" | arch-chroot /mnt chpasswd
+
+arch-chroot /mnt sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL:ALL)\s\+ALL\)/\1/' /etc/sudoers
 arch-chroot /mnt chsh -s /bin/${SHELL} root
