@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Do you want install Flatpak?"
 echo "1) Yes"
 echo "2) No"
