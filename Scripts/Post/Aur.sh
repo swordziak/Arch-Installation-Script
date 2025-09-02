@@ -8,7 +8,7 @@ read AUR
 case $AUR in
     1)
         read -p "Enter your username: " USERNAME
-        arch-chroot /mnt su -c "git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sri --noconfirm" - $USERNAME
+        arch-chroot /mnt su -c "git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sri --noconfirm && cd .. && rm -rf yay" - $USERNAME
         break
         ;;
     2)
@@ -35,7 +35,7 @@ case $GUI in
            arch-chroot /mnt pacman -Q pantheon-session >/dev/null 2>&1; then
             
             echo "Installing Pamac..."
-            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm" - $USERNAME
+            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf yay" - $USERNAME
 
         elif arch-chroot /mnt pacman -Q plasma >/dev/null 2>&1 || \
              arch-chroot /mnt pacman -Q lxqt-session >/dev/null 2>&1 || \
@@ -47,7 +47,7 @@ case $GUI in
 
         else
             echo "Installing Pamac..."
-            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm" - $USERNAME
+            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf yay" - $USERNAME
         fi
         break
         ;;
