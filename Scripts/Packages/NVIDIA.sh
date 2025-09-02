@@ -7,7 +7,7 @@ read GPU_CHOICE
 
 if [[ "$GPU_CHOICE" == "1" ]]; then
     echo "Instaling drivers."
-    arch-chroot /mnt pacman -S nvidia-open nvidia-utils
+    arch-chroot /mnt pacman -S nvidia-open nvidia-utils --noconfirm
 elif [[ "$GPU_CHOICE" == "2" ]]; then
     :
 else

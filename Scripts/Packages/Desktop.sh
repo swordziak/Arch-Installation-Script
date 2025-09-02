@@ -58,7 +58,7 @@ while true; do
             ;;
         11)
             echo "Installing Xfce."
-            arch-chroot /mnt pacman -S xfce4 xfce4-goodies lightdm-gtk-greeter
+            arch-chroot /mnt pacman -S xfce4 xfce4-goodies lightdm-gtk-greeter --noconfirm
             arch-chroot /mnt systemctl enable lightdm
             break
             ;;
@@ -71,13 +71,13 @@ done
 if arch-chroot /mnt pacman -Q bluez > /dev/null 2>&1; then
     case $DESKTOP_INSTALL in
         1|2|6|9|10|11)
-            arch-chroot /mnt pacman -S gnome-bluetooth-3.0
+            arch-chroot /mnt pacman -S gnome-bluetooth-3.0 --noconfirm
             ;;
         4|7|8)
-            arch-chroot /mnt pacman -S bluedevil
+            arch-chroot /mnt pacman -S bluedevil --noconfirm
             ;;
         5)
-            arch-chroot /mnt pacman -S blueman
+            arch-chroot /mnt pacman -S blueman --noconfirm
             ;;
     esac
 fi

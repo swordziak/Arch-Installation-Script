@@ -30,6 +30,6 @@ case $SHELL_CHOICE in
         SHELL="bash"
         ;;
 esac
-arch-chroot /mnt pacman -S $SHELL
+arch-chroot /mnt pacman -S $SHELL --noconfirm
 
 ./User/Account.sh $USER_NAME $PASS $SHELL

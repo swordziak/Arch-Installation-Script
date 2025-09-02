@@ -5,4 +5,4 @@
 ./Base/Mirrorlist.sh
 ./Base/SystemPackages.sh
 ./Base/Locale.sh
-pacman -Syu
+pacman -Syu --noconfirm
