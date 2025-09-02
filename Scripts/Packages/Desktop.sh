@@ -1,6 +1,5 @@
 #!/bin/bash
 
-chmod +x ./Desktop/* 
 while true; do
     echo "Pick desktop"
     echo "1) Budgie"

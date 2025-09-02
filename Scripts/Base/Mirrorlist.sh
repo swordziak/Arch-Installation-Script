@@ -1,6 +1,5 @@
 #!/bin/bash
 
-chmod +x ./Desktop/* 
 while true; do
     echo "Pick country for mirrorlist"
     echo "1) Albania"

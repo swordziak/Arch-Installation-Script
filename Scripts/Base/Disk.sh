@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# --- DISK
 echo "Select disc:"
 read DISK
 
@@ -10,12 +9,10 @@ else
     DISK_PREFIX="/dev/${DISK}"
 fi
 
-# --- FORMAT
 mkfs.fat -F32 ${DISK_PREFIX}1
 mkfs.btrfs -L Arch ${DISK_PREFIX}2
 mkswap ${DISK_PREFIX}3
 
-# --- MOUNT
 mount /dev/${DISK_PREFIX}2 /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home

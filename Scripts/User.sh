@@ -1,7 +1,5 @@
 #!/bin/bash
 
-chmod +x ./User/*
-
 echo "Enter username:"
 read USER_NAME
 
