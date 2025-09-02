@@ -39,7 +39,30 @@ read USER_NAME
 echo "Enter password:"
 read -s PASS
 echo "Pick shell:"
-read SHELL
+echo "1) bash"
+echo "2) fish"
+echo "3) zsh"
+read SHELL_CHOICE
+
+case $SHELL_CHOICE in
+    1)
+        echo "Picked bash."
+        SHELL="bash"
+        ;;
+    2)
+        echo "Picked fish."
+        SHELL="fish"
+        ;;
+    3)
+        echo "Picked zsh."
+        SHELL="zsh"
+        ;;
+    *)
+        echo "Wrong choice. Picked bash."
+        SHELL="bash"
+        ;;
+esac
+
 echo "$PASS" | arch-chroot /mnt passwd --stdin root
 arch-chroot /mnt useradd -m -G wheel,video -s /bin/${SHELL} $USER_NAME
 echo "$PASS" | arch-chroot /mnt passwd --stdin $USER_NAME
