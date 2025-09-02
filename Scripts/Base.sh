@@ -5,4 +5,5 @@
 ./Base/Mirrorlist.sh
 ./Base/SystemPackages.sh
 ./Base/Locale.sh
-pacman -Syu --noconfirm
+arch-chroot /mnt sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+arch-chroot /mnt pacman -Syu --noconfirm
