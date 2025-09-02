@@ -73,7 +73,94 @@ arch-chroot /mnt chsh -s /bin/${SHELL} root
 # --- DESKTOP
 arch-chroot /mnt pacman -Syu
 arch-chroot /mnt pacman -S $SHELL
-arch-chroot /mnt pacman -S gdm gnome-shell nautilus gnome-screenshot gnome-console gvfs gvfs-afc gvfs-goa gvfs-dnssd gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-onedrive gvfs-smb gvfs-wsdd malcontent gnome-control-center gnome-session xdg-desktop-portal-gnome networkmanager adw-gtk-theme timeshift
+while true; do
+    echo "Pick desktop"
+    echo "1) Budgie"
+    echo "2) Cinnamon"
+    echo "3) COSMIC"
+    echo "4) Cutefish"
+    echo "5) Deepin"
+    echo "6) GNOME"
+    echo "7) KDE"
+    echo "8) LXQt"
+    echo "9) MATE"
+    echo "10) Pantheon"
+    echo "11) Xfce"
+    read -p "Choose option: " DESKTOP_INSTALL
+
+    case $DESKTOP_INSTALL in
+        1)
+            echo "Installing Budgie."
+            arch-chroot /mnt pacman -S budgie budgie-desktop-view budgie-backgrounds network-manager-applet materia-gtk-theme papirus-icon-theme nemo gdm
+            arch-chroot /mnt systemctl enable gdm
+            break
+            ;;
+        2)
+            echo "Installing Cinnamon."
+            arch-chroot /mnt pacman -S cinnamon xed xreader lightdm
+            arch-chroot /mnt systemctl enable gdm
+            break
+            ;;
+        3)
+            echo "Installing COSMIC."
+            arch-chroot /mnt pacman -S cosmic gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-nfs gvfs-dnssd gnome-keyring
+            arch-chroot /mnt systemctl enable cosmic-greeter.service
+            break
+            ;;
+            ;;
+        4)
+            echo "Installing Cutefish."
+            arch-chroot /mnt pacman -S cutefish sddm
+            arch-chroot /mnt systemctl enable sddm
+            break
+            ;;
+        5)
+            echo "Installing Deepin."
+            arch-chroot /mnt pacman -S deepin deepin-kwin deepin-extra lightdm lightdm-gtk-greeter
+            arch-chroot /mnt systemctl enable lightdm
+            break
+            ;;
+        6)
+            echo "Installing GNOME."
+            arch-chroot /mnt pacman -S gnome
+            arch-chroot /mnt systemctl enable gdm
+            break
+            ;;
+        7)
+            echo "Installing KDE."
+            arch-chroot /mnt pacman -S plasma sddm
+            arch-chroot /mnt systemctl enable sddm
+            break
+            ;;
+        8)
+            echo "Installing LXQt."
+            arch-chroot /mnt pacman -S lxqt breeze-icons sddm
+            arch-chroot /mnt systemctl enable sddm
+            break
+            ;;
+        9)
+            echo "Installing MATE."
+            arch-chroot /mnt pacman -S mate mate-extra lightdm-gtk-greeter
+            arch-chroot /mnt systemctl enable lightdm
+            break
+            ;;
+        10)
+            echo "Installing Pantheon."
+            arch-chroot /mnt pacman -S pantheon pantheon-geoclue2-agent pantheon-polkit-agent pantheon-print pantheon-settings-daemon lightdm lightdm-gtk-greeter
+            arch-chroot /mnt systemctl enable lightdm
+            break
+            ;;
+        11)
+            echo "Installing Xfce."
+            arch-chroot /mnt pacman -S xfce4 xfce4-goodies lightdm-gtk-greeter
+            arch-chroot /mnt systemctl enable lightdm
+            break
+            ;;
+        *)
+            echo "Wrong choice. Try again."
+            ;;
+    esac
+done
 arch-chroot /mnt pacman -S nvidia-open nvidia-utils 
 arch-chroot /mnt mkinitcpio -P
 arch-chroot /mnt pacman -S flatpak
