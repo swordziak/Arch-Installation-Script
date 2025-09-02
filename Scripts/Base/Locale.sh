@@ -1,3 +1,5 @@
+#!/bin/bash
+
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 arch-chroot /mnt hwclock --systohc
 arch-chroot /mnt locale-gen
