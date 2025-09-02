@@ -68,3 +68,17 @@ while true; do
             ;;
     esac
 done
+
+if arch-chroot /mnt pacman -Q bluez > /dev/null 2>&1; then
+    case $DESKTOP_INSTALL in
+        1|2|6|9|10|11)
+            arch-chroot /mnt pacman -S gnome-bluetooth-3.0
+            ;;
+        4|7|8)
+            arch-chroot /mnt pacman -S bluedevil
+            ;;
+        5)
+            arch-chroot /mnt pacman -S blueman
+            ;;
+    esac
+fi
