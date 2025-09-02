@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "Enter username:"
 read USER_NAME
 
