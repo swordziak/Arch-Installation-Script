@@ -7,12 +7,13 @@ read AUR
 
 case $AUR in
     1)
-        read -p "Enter your username: " USERNAME
-        arch-chroot /mnt su -c "git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sri --noconfirm && cd .. && rm -rf yay" - $USERNAME
-        break
+        if [ -z "$USER_NAME" ]; then
+            echo "ERROR: Username is not set."
+            exit 1
+        fi
+        arch-chroot /mnt su -c "git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -sri --noconfirm && cd .. && rm -rf yay" - "$USER_NAME"
         ;;
     2)
-        break
         ;;
     *)
         echo "Wrong choice. Try again."
@@ -34,7 +35,7 @@ case $GUI in
             arch-chroot /mnt pacman -Q marco >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q pantheon-session >/dev/null 2>&1; then
             echo "Installing Pamac..."
-            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - $USERNAME
+            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - $USER_NAME
         elif arch-chroot /mnt pacman -Q plasma >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q lxqt-session >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q cutefish-core >/dev/null 2>&1 || \
@@ -43,13 +44,11 @@ case $GUI in
             arch-chroot /mnt pacman -S octopi --noconfirm
         else
             echo "Installing Pamac..."
-            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - $USERNAME
+            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - "$USER_NAME"
         fi
-        break
         ;;
 
     2)
-        break
         ;;
     *)
         echo "Wrong choice. Try again."
