@@ -1,22 +1,29 @@
 #!/bin/bash
 
-echo "Select disc (ex. sda, nvme0n1p):"
+echo "Select disc:"
 read DISK
+
+if [[ "$DISK" == *nvme* ]]; then
+    DISK_PREFIX="/dev/${DISK}p"
+else
+    DISK_PREFIX="/dev/${DISK}"
+fi
+
 # --- FORMAT
-mkfs.fat -F32 /dev/${DISK}1
-mkfs.btrfs -L Arch /dev/${DISK}2
-mkswap /dev/${DISK}3
+mkfs.fat -F32 ${DISK_PREFIX}1
+mkfs.btrfs -L Arch ${DISK_PREFIX}2
+mkswap ${DISK_PREFIX}3
 
 # --- MOUNT
-mount /dev/${DISK}2 /mnt
+mount /dev/${DISK_PREFIX}2 /mnt
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 umount /mnt
-mount -o subvol=@ /dev/${DISK}2 /mnt
+mount -o subvol=@ /dev/${DISK_PREFIX}2 /mnt
 mkdir -p /mnt/home
-mount -o subvol=@home /dev/${DISK}2 /mnt/home
-mount --mkdir /dev/${DISK}1 /mnt/boot/
-swapon /dev/${DISK}3
+mount -o subvol=@home /dev/${DISK_PREFIX}2 /mnt/home
+mount --mkdir /dev/${DISK_PREFIX}1 /mnt/boot/
+swapon /dev/${DISK_PREFIX}3
 
 # --- BASE
 curl -s "https://archlinux.org/mirrorlist/?country=DE&country=PL&country=CZ&country=UA&country=LT&country=SK&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 25 - > /etc/pacman.d/mirrorlist
