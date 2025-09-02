@@ -6,7 +6,7 @@ read USER_NAME
 echo "Enter password:"
 read -s PASS
 
-echo "Pick shell:"
+echo "Choose shell:"
 echo "1) bash"
 echo "2) fish"
 echo "3) zsh"
@@ -14,19 +14,19 @@ read SHELL_CHOICE
 
 case $SHELL_CHOICE in
     1)
-        echo "Picked bash."
+        echo "Choosed bash."
         SHELL="bash"
         ;;
     2)
-        echo "Picked fish."
+        echo "Choosed fish."
         SHELL="fish"
         ;;
     3)
-        echo "Picked zsh."
+        echo "Choosed zsh."
         SHELL="zsh"
         ;;
     *)
-        echo "Wrong choice. Picked bash."
+        echo "Wrong choice. Choosed bash."
         SHELL="bash"
         ;;
 esac

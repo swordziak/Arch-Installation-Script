@@ -1,7 +1,7 @@
 #!/bin/bash
 
 while true; do
-    echo "Pick desktop"
+    echo "Choose desktop"
     echo "1) Budgie"
     echo "2) Cinnamon"
     echo "3) COSMIC"

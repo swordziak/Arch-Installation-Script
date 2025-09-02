@@ -1,7 +1,7 @@
 #!/bin/bash
 
 while true; do
-    echo "Pick country for mirrorlist"
+    echo "Choose country for mirrorlist"
     echo "1) Albania"
     echo "2) Armenia"
     echo "3) Australia"
