@@ -32,4 +32,5 @@ case $SHELL_CHOICE in
 esac
 arch-chroot /mnt pacman -S $SHELL --noconfirm
 
-./User/Account.sh $USER_NAME $PASS $SHELL
+export USER_NAME PASS SHELL
+./User/Account.sh
