@@ -104,8 +104,8 @@ while true; do
             ;;
         2)
             echo "Installing Cinnamon."
-            arch-chroot /mnt pacman -S cinnamon xed xreader lightdm
-            arch-chroot /mnt systemctl enable gdm
+            arch-chroot /mnt pacman -S cinnamon xed xreader lightdm lightdm-gtk-greeter
+            arch-chroot /mnt systemctl enable lightdm
             break
             ;;
         3)
@@ -113,7 +113,6 @@ while true; do
             arch-chroot /mnt pacman -S cosmic gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-nfs gvfs-dnssd gnome-keyring
             arch-chroot /mnt systemctl enable cosmic-greeter.service
             break
-            ;;
             ;;
         4)
             echo "Installing Cutefish."
