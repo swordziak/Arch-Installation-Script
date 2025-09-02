@@ -1,18 +1,22 @@
 #!/bin/bash
 
+DESKTOPS=(
+    "1) Budgie"
+    "2) Cinnamon"
+    "3) COSMIC"
+    "4) Cutefish"
+    "5) Deepin"
+    "6) GNOME"
+    "7) KDE"
+    "8) LXQt"
+    "9) MATE"
+    "10) Pantheon"
+    "11) Xfce"
+)
+
 while true; do
     echo "Choose desktop"
-    echo "1) Budgie"
-    echo "2) Cinnamon"
-    echo "3) COSMIC"
-    echo "4) Cutefish"
-    echo "5) Deepin"
-    echo "6) GNOME"
-    echo "7) KDE"
-    echo "8) LXQt"
-    echo "9) MATE"
-    echo "10) Pantheon"
-    echo "11) Xfce"
+    printf '%s\n' "${DESKTOPS[@]}" | column -t
     read -p "Choose option: " DESKTOP_INSTALL
 
     case $DESKTOP_INSTALL in
