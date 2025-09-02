@@ -83,304 +83,308 @@ while true; do
 
     case $MIRRORLIST in
         1)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=AL&country=GR&country=RS&country=IT&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="AL&country=GR&country=RS&country=IT"
             break
             ;;
         2)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=AM&country=TR&country=AZ&country=GE&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="AM&country=TR&country=AZ&country=GE"
             break
             ;;
         3)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=AU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="AU"
             break
             ;;
         4)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=AT&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="AT"
             break
             ;;
         5)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=AM&country=IR&country=AZ&country=GE&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="AM&country=IR&country=AZ&country=GE"
             break
             ;;
         6)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=BD&country=IN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="BD&country=IN"
             break
             ;;
         7)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=BY&country=RU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="BY&country=RU"
             break
             ;;
         8)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=BE&country=FR&country=DE&country=LU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="BE&country=FR&country=DE&country=LU"
             break
             ;;
         9)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=BR&country=CO&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="BR&country=CO"
             break
             ;;
         10)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=BG&country=GR&country=RO&country=RS&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="BG&country=GR&country=RO&country=RS"
             break
             ;;
         11)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=KH&country=TH&country=VN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="KH&country=TH&country=VN"
             break
             ;;
         12)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CA&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CA"
             break
             ;;
         13)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CL&country=BR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CL&country=BR"
             break
             ;;
         14)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CN"
             break
             ;;
         15)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CO&country=BR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CO&country=BR"
             break
             ;;
         16)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CO&country=RS&country=AT&country=IT&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CO&country=RS&country=AT&country=IT"
             break
             ;;
         17)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CZ&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CZ"
             break
             ;;
         18)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=DK&country=DE&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="DK&country=DE"
             break
             ;;
         19)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=EC&country=CO&country=BR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="EC&country=CO&country=BR"
             break
             ;;
         20)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=EE&country=LT&country=LV&country=FI&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="EE&country=LT&country=LV&country=FI"
             break
             ;;
         21)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=FI&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="FI"
             break
             ;;
         22)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=FR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="FR"
             break
             ;;
         23)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=GE&country=TR&country=RU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="GE&country=TR&country=RU"
             break
             ;;
         24)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=DE&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="DE"
             break
             ;;
         25)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=GR&country=TR&country=BG&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="GR&country=TR&country=BG"
             break
             ;;
         26)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=HK&country=JP&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="HK&country=JP"
             break
             ;;
         27)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=HU&country=SK&country=UA&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="HU&country=SK&country=UA"
             break
             ;;
         28)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=IS&country=GB&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="IS&country=GB"
             break
             ;;
         29)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=IN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="IN"
             break
             ;;
         30)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=ID&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="ID"
             break
             ;;
         31)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=IR&country=TR&country=AZ&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="IR&country=TR&country=AZ"
             break
             ;;
         32)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=IL&country=TR&country=GR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="IL&country=TR&country=GR"
             break
             ;;
         33)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=IT&country=FR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="IT&country=FR"
             break
             ;;
         34)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=JP&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="JP"
             break
             ;;
         35)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=KZ&country=RU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="KZ&country=RU"
             break
             ;;
         36)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=KE&country=RE&country=ZA&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="KE&country=RE&country=ZA"
             break
             ;;
         37)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=LV&country=LT&country=PL&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="LV&country=LT&country=PL"
             break
             ;;
         38)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=LV&country=LT&country=PL&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="LV&country=LT&country=PL"
             break
             ;;
         39)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=BE&country=FR&country=DE&country=LU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="BE&country=FR&country=DE&country=LU"
             break
             ;;
         40)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=MU&country=RE&country=ZA&country=IN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="MU&country=RE&country=ZA&country=IN"
             break
             ;;
         41)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=MX&country=US&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="MX&country=US"
             break
             ;;
         42)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=MD&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="MD"
             break
             ;;
         43)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=MA&country=PT&country=ES&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="MA&country=PT&country=ES"
             break
             ;;
         44)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=NP&country=IN&country=CN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="NP&country=IN&country=CN"
             break
             ;;
         45)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=NL&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="NL"
             break
             ;;
         46)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=NC&country=AU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="NC&country=AU"
             break
             ;;
         47)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=NZ&country=AU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="NZ&country=AU"
             break
             ;;
         48)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=MK&country=GR&country=RS&country=BG&country=TR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="MK&country=GR&country=RS&country=BG&country=TR"
             break
             ;;
         49)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=NO&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="NO"
             break
             ;;
         50)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=PY&country=CL&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="PY&country=CL"
             break
             ;;
         51)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=PL&country=DE&country=LT&country=LV&country=CZ&country=UA&country=SK&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="PL&country=DE&country=LT&country=LV&country=CZ&country=UA&country=SK"
             break
             ;;
         52)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=PT&country=ES&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="PT&country=ES"
             break
             ;;
         53)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=RO&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="RO"
             break
             ;;
         54)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=RU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="RU"
             break
             ;;
         55)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=RE&country=AZ&country=SA&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="RE&country=AZ&country=SA"
             break
             ;;
         56)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=RE&country=AZ&country=SA&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="RE&country=AZ&country=SA"
             break
             ;;
         57)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=RS&country=BG&country=RO&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="RS&country=BG&country=RO"
             break
             ;;
         58)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=SG&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="SG"
             break
             ;;
         59)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=SK&country=CZ&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="SK&country=CZ"
             break
             ;;
         60)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=SI&country=SK&country=CZ&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="SI&country=SK&country=CZ"
             break
             ;;
         61)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=ZA&country=RE&country=SA&country=KE&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="ZA&country=RE&country=SA&country=KE"
             break
             ;;
         62)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=KR&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="KR"
             break
             ;;
         63)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=PT&country=ES&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="PT&country=ES"
             break
             ;;
         64)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=SE&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="SE"
             break
             ;;
         65)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=CH&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="CH"
             break
             ;;
         66)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=TW&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="TW"
             break
             ;;
         67)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=TH&country=SG&country=CN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="TH&country=SG&country=CN"
             break
             ;;
         68)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=TR&country=GR&country=BG&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="TR&country=GR&country=BG"
             break
             ;;
         69)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=UA&country=LV&country=LT&country=PL&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="UA&country=LV&country=LT&country=PL"
             break
             ;;
         70)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=AE&country=SA&country=ZA&country=IN&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="AE&country=SA&country=ZA&country=IN"
             break
             ;;
         71)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=GB&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="GB"
             break
             ;;
         72)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=US&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="US"
             break
             ;;
         73)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=UZ&country=RU&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="UZ&country=RU"
             break
             ;;
         74)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=VN&country=TH&country=HK&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="VN&country=TH&country=HK"
             break
             ;;
         *)
-            arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=all&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+            country_list="all"
             break
             ;;
     esac
+    if [[ -n "$country_list" ]]; then
+        arch-chroot /mnt bash -c "curl -s \"https://archlinux.org/mirrorlist/?country=$country_list&protocol=https&use_mirror_status=on\" | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - > /etc/pacman.d/mirrorlist"
+        break
+    fi
 done
