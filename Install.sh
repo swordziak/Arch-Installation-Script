@@ -179,7 +179,6 @@ arch-chroot /mnt pacman -S flatpak
 arch-chroot /mnt flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # --- SERVICES
-arch-chroot /mnt systemctl enable gdm
 arch-chroot /mnt systemctl enable NetworkManager
 
 # --- BOOTLOADER
