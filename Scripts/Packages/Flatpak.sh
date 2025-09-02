@@ -1,3 +1,9 @@
+#!/bin/bash
+echo "Do you want install Flatpak?"
+echo "1) Yes"
+echo "2) No"
+read FLATPAK
+
 if [[ "$FLATPAK" == "1" ]]; then
     echo "Instaling Flatpak."
     arch-chroot /mnt pacman -S flatpak
