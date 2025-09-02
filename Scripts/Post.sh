@@ -2,5 +2,5 @@
 
 chmod +x ./Post/*
 
-arch-chroot /mnt systemctl enable NetworkManager
+./Post/Services.sh
 ./Post/Grub.sh
