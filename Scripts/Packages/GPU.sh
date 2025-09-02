@@ -20,9 +20,9 @@ done
 case $GPU_CHOICE in
     1)
         if lspci -v | grep -q "Tiger Lake" || lspci -v | grep -q "Rocket Lake" || lspci -v | grep -q "Alder Lake" || lspci -v | grep -q "Arrow Lake" || lspci -v | grep -q "Meteor Lake" || lspci -v | grep -q "Lunar Lake" || lspci -v | grep -q "Panther Lake" || lspci -v | grep -q "Nova Lake" || lspci -v | grep -q "Razer Lake"; then
-            arch-chroot /mnt pacman -S libvpl vpl-gpu-rt --noconfirm
+            arch-chroot /mnt pacman -S libvpl vpl-gpu-rt vulkan-intel lib32-vulkan-intel --noconfirm
         else
-            arch-chroot /mnt pacman -S intel-media-driver --noconfirm
+            arch-chroot /mnt pacman -S intel-media-driver vulkan-intel lib32-vulkan-intel --noconfirm
         fi
         ;;
     2)

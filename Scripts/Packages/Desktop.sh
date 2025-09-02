@@ -83,3 +83,4 @@ if arch-chroot /mnt pacman -Q bluez > /dev/null 2>&1; then
             ;;
     esac
 fi
+pacman -S vulkan-icd-loader lib32-vulkan-icd-loader --noconfirm
