@@ -35,13 +35,13 @@ case $GUI in
             arch-chroot /mnt pacman -Q marco >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q pantheon-session >/dev/null 2>&1; then
             echo "Installing Pamac..."
-            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - $USER_NAME
+            arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - "$USER_NAME"
         elif arch-chroot /mnt pacman -Q plasma >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q lxqt-session >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q cutefish-core >/dev/null 2>&1 || \
             arch-chroot /mnt pacman -Q deepin-session >/dev/null 2>&1; then
             echo "Installing Octopi..."
-            arch-chroot /mnt pacman -S octopi --noconfirm
+            arch-chroot /mnt su -c "pacman -S octopi --noconfirm"
         else
             echo "Installing Pamac..."
             arch-chroot /mnt su -c "git clone https://aur.archlinux.org/pamac-all.git && cd pamac-all && makepkg -sri --noconfirm && cd .. && rm -rf pamac-all" - "$USER_NAME"

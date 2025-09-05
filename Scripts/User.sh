@@ -6,13 +6,13 @@ echo "Enter username:"
 read USER_NAME
 
 echo "Enter password:"
-read -s PASS
+read -s PASS 
 
 echo "Choose shell:"
 echo "1) bash"
 echo "2) fish"
 echo "3) zsh"
-read SHELL_CHOICE
+read -r SHELL_CHOICE
 
 case $SHELL_CHOICE in
     1)
@@ -32,6 +32,7 @@ case $SHELL_CHOICE in
         SHELL="bash"
         ;;
 esac
+
 arch-chroot /mnt pacman -S $SHELL --noconfirm
 
 export USER_NAME PASS SHELL

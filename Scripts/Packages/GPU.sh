@@ -12,7 +12,7 @@ while true; do
             break
             ;;
         *)
-            :
+            echo "Invalid choice. Please select 1, 2, or 3."
             ;;
     esac
 done
@@ -30,7 +30,7 @@ case $GPU_CHOICE in
         ;;
     3)
         if lspci -v | grep -q "NVIDIA"; then
-            GPU_ID=$(lspci -n | grep -E '10de:250[0-9]|10de:25[1-9][0-9]|10de:25[0-9][a-f]|10de:220[0-9]|10de:22[0-9][a-f]|10de:22[1-9][0-9]|10de:22[a-f][0-9]|10de:22[a-f][a-f]')
+            GPU_ID=$(lspci -n | grep -E '10de:250[0-9]|10de:25[1-9][0-9]|10de:25[0-9][a-f]|10de:220[0-9]|10de:220[0-9][a-f]|10de:22[0-9][a-f]|10de:22[a-f][0-9]|10de:22[a-f][a-f]')
             if [[ -n "$GPU_ID" ]]; then
                 arch-chroot /mnt pacman -S nvidia-open nvidia-utils lib32-nvidia-utils --noconfirm
             else

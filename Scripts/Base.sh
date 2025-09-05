@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ./Base/Disk.sh
 ./Base/Mirrorlist.sh
 ./Base/SystemPackages.sh
