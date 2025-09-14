@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: Timezone select
 # TODO: Language and Keymap select
 
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
