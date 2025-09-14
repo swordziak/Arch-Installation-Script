@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO: LUKS Support
+
 echo "Select disc:"
 read DISK
 
