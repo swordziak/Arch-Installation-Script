@@ -1,5 +1,6 @@
 #!/bin/bash
 
 ./Post/Services.sh
-./Post/Grub.sh
+export DISK_PREFIX
+./Post/Boot.sh
 ./Post/Aur.sh
