@@ -8,7 +8,7 @@ if [ "$BOOT_MODE" == "UEFI" ]; then
     arch-chroot /mnt refind-install
     cat > /tmp/refind_linux.conf <<-EOF
 "Boot Arch Linux"                 "root=UUID=$ROOT_UUID rw quiet splash subvol=/@"
-"Boot Arch Linux"      "root=UUID=$ROOT_UUID rw single subvol=/@"
+"Boot Arch Linux (fallback)"                 "root=UUID=$ROOT_UUID rw single subvol=/@"
 EOF
     arch-chroot /mnt cp /tmp/refind_linux.conf "$ESP_PATH/EFI/refind/refind_linux.conf"
     rm /tmp/refind_linux.conf
