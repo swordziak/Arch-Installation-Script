@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT_UUID=$(blkid -s UUID -o value /dev/${DISK_PREFIX}2)
+ROOT_UUID=$(blkid -s UUID -o value "${DISK_PREFIX}2")
 ESP_PATH="/mnt/boot/efi"
 
 if [ "$BOOT_MODE" == "UEFI" ]; then
@@ -13,7 +13,7 @@ EOF
     arch-chroot /mnt cp /tmp/refind_linux.conf "$ESP_PATH/EFI/refind/refind_linux.conf"
     rm /tmp/refind_linux.conf
 elif [ "$BOOT_MODE" == "BIOS" ]; then
-    arch-chroot /mnt grub-install --target=i386-pc /dev/${DISK_PREFIX}
+    arch-chroot /mnt grub-install --target=i386-pc "${DISK_PREFIX}"
     arch-chroot /mnt sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/& splash quiet subvol=/@/' /etc/default/grub
     arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 else

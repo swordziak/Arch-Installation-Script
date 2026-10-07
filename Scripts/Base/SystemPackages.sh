@@ -3,7 +3,7 @@
 echo "Choose your CPU brand:"
 echo "1) AMD"
 echo "2) Intel"
-read CPU_CHOICE
+read -r CPU_CHOICE
 
 case $CPU_CHOICE in
     1)
@@ -20,5 +20,6 @@ case $CPU_CHOICE in
         ;;
 esac
 
+# shellcheck disable=SC2086
 pacstrap -K /mnt base linux linux-firmware $UCODE btrfs-progs nano man-pages man-db dosfstools ntfs-3g git base-devel
 genfstab -U /mnt >> /mnt/etc/fstab

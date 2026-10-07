@@ -11,7 +11,6 @@ case "$BLUETOOTH_CHOICE" in
         arch-chroot /mnt systemctl enable bluetooth.service
         ;;
     2)
-        break
         ;;
     *)
         echo "Wrong choice. Try again."
