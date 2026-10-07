@@ -17,7 +17,7 @@ DESKTOPS=(
 while true; do
     echo "Choose desktop"
     printf '%s\n' "${DESKTOPS[@]}" | column -t
-    read -p "Choose option: " DESKTOP_INSTALL
+    read -r -p "Choose option: " DESKTOP_INSTALL
 
     case $DESKTOP_INSTALL in
         1)

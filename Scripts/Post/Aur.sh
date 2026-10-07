@@ -3,7 +3,7 @@
 echo "Do you want to add AUR Support?"
 echo "1) Yes"
 echo "2) No"
-read AUR
+read -r AUR
 
 case $AUR in
     1)
@@ -23,7 +23,7 @@ esac
 echo "Do you want to Install GUI Package Manager?"
 echo "1) Yes"
 echo "2) No"
-read -p "Your choice: " GUI
+read -r -p "Your choice: " GUI
 
 case $GUI in
     1)

@@ -3,10 +3,10 @@
 set -e
 
 echo "Enter username:"
-read USER_NAME
+read -r USER_NAME
 
 echo "Enter password:"
-read -s PASS 
+read -r -s PASS
 
 echo "Choose shell:"
 echo "1) bash"

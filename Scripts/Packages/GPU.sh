@@ -5,7 +5,7 @@ while true; do
     echo "1) Intel"
     echo "2) AMD"
     echo "3) NVIDIA"
-    read -p "Your choice: " GPU_CHOICE
+    read -r -p "Your choice: " GPU_CHOICE
 
     case $GPU_CHOICE in
         1|2|3)

@@ -3,7 +3,7 @@
 echo "Do you want install Flatpak?"
 echo "1) Yes"
 echo "2) No"
-read FLATPAK
+read -r FLATPAK
 
 if [[ "$FLATPAK" == "1" ]]; then
     echo "Installing Flatpak."
